@@ -1,0 +1,100 @@
+input.text {
+	font-family:Tuffy;
+	/*font-size:13pt;*/
+	font-weight:bold;
+	background-color: transparent;
+	border-style:none;
+	/*color:white; */
+}
+
+input.text2 {
+	font-family:Tuffy;
+	font-size:15pt;
+	font-weight:bold;
+	background-color:FFF;
+	border-style:none;
+	color:black; 
+}
+
+
+input.btn {
+	font-family:Tuffy;
+	font-size:15pt;
+	font-weight:bold;
+		background-color:transparent;
+	/*background-color:black;*/
+	border-style:none;
+	height: 42px;
+    width: 128px;
+	background-image:url(img/boton.png);
+}
+input.btn1 {
+	font-family:Tuffy;
+	font-size:15pt;
+	font-weight:bold;
+	background-color:transparent;
+	/*background-color:black;*/
+	border-style:none;
+	height: 42px;
+    width: 128px;
+	background-image:url(img/boton2.png);
+}
+br { clear: left; }
+
+#whole {
+	position: relative;
+	margin: 0;
+	padding: 130px 20px;
+	/*width: 810px;*/
+	width:790px;
+	height:1033px;
+	
+	top: 0px;
+	left: 0;
+	background-image:url(mybike_cuidaplaneta-3.jpg) ; 
+	background-repeat: no-repeat;
+}
+
+#kmDiv {
+	position: relative;
+	width: 50px;
+	/*top: 140px;
+	left: 150px;*/
+	top: 287px;
+	left: 485px;
+}
+
+#txtDiv {
+	position: relative;
+	width: 200px;
+	top: 444px;
+	left: 359px;
+	color:#000;
+}
+
+#btnCalc {
+	position: relative;
+	/*left: 110px;*/
+	
+	width: 200px;
+	
+	/*top: 156px;*/
+	left: 544px;
+	top:145px;
+	
+	/*margin-left: 545px;
+    margin-top: 155px;*/
+	/*background-image:url(img/boton.png);
+	background-repeat:no-repeat;
+	width:128px;
+	height:42px;*/
+	
+	
+}
+
+#btnPub {
+	left: 545px;
+    position: relative;
+    top: 437px;
+    width: 200px;
+}

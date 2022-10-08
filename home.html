@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" type="text/css"/>
+		<script type="text/javascript"> 
+			
+			var km;
+			var lbs;
+			var cal;
+			var usd;
+			
+			function calc() { 
+				km = document.getElementById('km').value;
+				lbs = (km * 0.60273006).toFixed(2);
+				cal = (km * 29.204446).toFixed(2);
+				usd = (km * 0.09320568).toFixed(2);
+				
+				document.getElementById('lbs').value = lbs;
+				document.getElementById('cal').value = cal;
+				document.getElementById('usd').value = usd;
+			} 
+
+
+			function publish() {
+				var results = "He recorrido "+km+" kilómetros en bicicleta, gracias a ello: Reduje "+lbs+" libras de CO2, Quemé "+cal+" calorías y Ahorré $"+usd+" dólares.";
+				FB.ui(
+					{
+						method: 'feed',
+						name: '¿Cuánto ayuda mi bicicleta al planeta?',
+						link: 'https://www.facebook.com/MyBike.Ecuador/app_429091713809830',
+						picture: 'https://www.appiglu.com/apps.facebook/mybike/images/icono_calculadora.jpg',
+						caption: 'Calculadora MIBIKE',
+						description: results,
+						display: 'popup'
+					},
+					function(response) {
+						if (response && response.post_id) {
+							//alert('Post was published.');
+						} else {
+							//alert('Post was not published.');
+						}
+						}
+					);
+			}
+			/*var message = '';
+			var results = "recorrió "+km+" kilómetros en bicicleta, gracias a ello: Redujo "+lbs+" libras de CO2, Quemó "+cal+" calorías y Ahorró "+usd+" dólares.";
+			var attachment = {
+				 'name':'MyBike',
+				 'href':'http://www.facebook.com/MyBike.Ecuador?sk=app_10531514314#!/MyBike.Ecuador?sk=app_10531514314',
+				 'caption':'{*actor*}'+' '+results,
+				 'media':[{
+				   'type':'image',
+				   'src':'http://www.ugadevelopers.com/frmatch/tile.png',
+				   'href':'http://www.facebook.com/MyBike.Ecuador?sk=app_10531514314#!/MyBike.Ecuador?sk=app_10531514314'
+				 }]};
+
+			var action_links = [{'text':'MyBike','href':'http://www.facebook.com/MyBike.Ecuador?sk=app_10531514314#!/MyBike.Ecuador?sk=app_10531514314'}];
+
+			Facebook.streamPublish(message, attachment, action_links);   */
+
+
+		</script>
+	</head>
+	<body>
+		   	<script>
+		  window.fbAsyncInit = function() {
+			FB.init({
+			  appId      : '429091713809830', // App ID
+			  channelUrl : 'www.appiglu.com/apps.facebook/mybike/calculadora/home.html', // Channel File
+			  status     : true, // check login status
+			  cookie     : true, // enable cookies to allow the server to access the session
+			  xfbml      : true  // parse XFBML
+			});
+
+			// Additional initialization code here
+		  };
+
+		  // Load the SDK Asynchronously
+		  (function(d){
+			 var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+			 if (d.getElementById(id)) {return;}
+			 js = d.createElement('script'); js.id = id; js.async = true;
+			 js.src = "//connect.facebook.net/en_US/all.js";
+			 ref.parentNode.insertBefore(js, ref);
+		   }(document));
+		</script>
+
+		<div id="whole">
+        
+			<div id="kmDiv">
+            
+				<input class="text2" type="text" id="km" size="10"/>
+				<p>
+			</div>
+
+			<div id="txtDiv">
+				<input class="text" type="text" value="" id="lbs" size="7"  readonly="readonly"/><br>
+				<input class="text" type="text" value="" id="cal" size="7" style='margin-top: 3.8em' readonly/> <br>
+				<input class="text" type="text" value="" id="usd" size="7" style='margin-top: 2.8em' readonly/>
+			</div>
+
+			<div id="btnCalc">
+				<input type="button"  class="btn" onClick="calc(); return false;" />
+			</div>
+			<div id="btnPub">
+				<input type="button"  class="btn1" onClick="publish(); return false;" />
+			</div>
+		</div>
+
+	</body>
+</html>
